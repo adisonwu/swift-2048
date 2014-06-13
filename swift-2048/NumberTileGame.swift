@@ -31,6 +31,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   // Amount that the vertical alignment of the component views should differ from if they were centered
   let verticalViewOffset: CGFloat = 0.0
 
+// 初始，順便設定手勢
   init(dimension d: NSInteger, threshold t: NSInteger) {
     self.dimension = d > 2 ? d : 2
     self.threshold = t > 8 ? t : 8
@@ -62,7 +63,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     self.view.addGestureRecognizer(rightSwipe)
   }
 
-
+// 讀取完成，設定遊戲
   // View Controller
   override func viewDidLoad()  {
     super.viewDidLoad()
@@ -79,6 +80,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     m.insertTileAtRandomLocation(2)
   }
 
+// 設定遊戲
   func setupGame() {
     let vcHeight = self.view.bounds.size.height
     let vcWidth = self.view.bounds.size.width
